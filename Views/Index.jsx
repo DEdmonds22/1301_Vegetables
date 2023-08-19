@@ -7,7 +7,7 @@ const Index = ({veggies}) => {
             <ul>
                 {veggies.map((veggie, i) => {
                     return (
-                        <li>
+                        <li key={i}>
                             The <a href={`/vegetables/${i}`}>{veggie.name}</a> is  {veggie.color} and it's {veggie.readyToEat ? "ready to eat" : "not ready to eat"}.
                         </li>
                     )

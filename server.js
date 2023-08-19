@@ -5,6 +5,8 @@ const veggies = require("./Models/Vegetables");
 app.set('view engine', "jsx");
 app.engine('jsx', require('express-react-views').createEngine());
 
+app.use(express.urlencoded({extended:false}));
+
 // index; all veggies
 app.get('/vegetables', (req, res) => {
     res.render('Index', {veggies: veggies});
@@ -22,7 +24,13 @@ app.get('/vegetables/:index', (req, res) => {
 
 // handles POST request made to vegetables
 app.post('/vegetables', (req, res) => {
-    console.log("posted")
+    if (req.body.readyToEat === 'on') {
+        req.body.readyToEat = true;
+    } else {
+        req.body.readyToEat = false;
+    }
+    veggies.push(req.body);
+    res.redirect("/vegetables")
 })
 
 app.listen('3000', () => {
