@@ -12,7 +12,7 @@ app.get('/vegetables', (req, res) => {
 
 // new; has a form to submit a new veggie
 app.get('/vegetables/new', (req, res) => {
-    res.render();
+    res.render('New');
 });
 
 // show; shows each individual veggie that's clicked
@@ -20,7 +20,7 @@ app.get('/vegetables/:index', (req, res) => {
     res.render('Show', {veggie: veggies[req.params.index]});
 });
 
-// handles forms request info
+// handles POST request made to vegetables
 app.post('/vegetables', (req, res) => {
     console.log("posted")
 })
