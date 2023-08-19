@@ -17,7 +17,7 @@ app.get('/vegetables/new', (req, res) => {
 
 // show; shows each individual veggie that's clicked
 app.get('/vegetables/:index', (req, res) => {
-    res.render();
+    res.render('Show', {veggie: veggies[req.params.index]});
 });
 
 // handles forms request info
