@@ -11,6 +11,7 @@ function Show({veggie}) {
                 <br />
                 Ready to Eat? {veggie.readyToEat ? "yes" : "no"}
             </div>
+            <a href="/vegetables">BACK</a>
         </>
     )
 }
