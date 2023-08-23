@@ -51,7 +51,7 @@ app.post('/vegetables', (req, res) => {
             res.redirect('/vegetables')
         })
         .catch(error => {
-            console.log(error)
+            console.error(error)
         })
 });
 
